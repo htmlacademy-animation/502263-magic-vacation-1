@@ -1,10 +1,26 @@
 .social-block {
   position: relative;
 
-  &:hover {
-    .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
+  @media (min-width: $tablet) {
+    &:hover {
+      .social-block__list {
+        opacity: 1;
+        pointer-events: auto;
+
+        & .social-block__link {
+          opacity: 0;
+          animation-name: fadeInBTT;
+          animation-duration: 1s;
+          animation-timing-function: ease-out;
+          animation-fill-mode: forwards;
+        }
+
+        @for $i from 1 through 3 {
+          & li:nth-child(#{$i}) .social-block__link {
+            animation-delay: #{$transition-duration-default * ($i - 1)};
+          }
+        }
+      }
     }
   }
 }
@@ -17,6 +33,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color $transition-duration-default ease-out;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +52,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: transform $transition-duration-default ease-out;
   }
 
   svg {
@@ -49,8 +67,7 @@
     color: $c-purple;
 
     &::before {
-      width: 112.5%;
-      height: 112.5%;
+      transform: translate(-50%, -50%) scale(1.125);
     }
   }
 
@@ -62,7 +79,7 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
+    &+.social-block__list {
       opacity: 1;
       pointer-events: auto;
     }
@@ -89,6 +106,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity $transition-duration-default linear $transition-duration-default;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -138,7 +156,7 @@
   }
 
   .social-block--active & {
-    opacity: 1;
+
     pointer-events: auto;
   }
 
@@ -168,6 +186,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition: all $transition-duration-default ease-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
