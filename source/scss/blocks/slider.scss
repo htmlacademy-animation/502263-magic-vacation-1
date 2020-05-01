@@ -3,6 +3,30 @@
   flex-grow: 1;
   width: 100%;
 
+  .swiper-slide {
+    & .slider__item-text {
+      opacity: 0;
+    }
+  }
+
+  .swiper-slide-active,
+  .swiper-slide-next {
+    & .slider__item-text {
+      opacity: 0;
+      animation-name: fadeInRTL;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+      animation-delay: $transition-duration-default * 2;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .swiper-slide-active {
+    & .slider__item-text {
+      animation-delay: $transition-duration-default;
+    }
+  }
+
   .swiper-wrapper {
     min-height: 100vh;
 

@@ -87,6 +87,12 @@
 }
 
 .intro__message {
+  opacity: 0;
+  animation-name: fadeInBTT;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: $transition-duration-default * 3;
+  animation-fill-mode: forwards;
   flex: none;
   width: 50.9rem;
   max-width: 50%;
