@@ -10369,18 +10369,28 @@ class FullPageScroll {
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   let onPageLoad = function () {
-    const LINK_ONLOAD_CLASSNAME = `onload-animation-link-active`;
-    const navActiveLinkNode = document.querySelector(`.page-header__menu .active`);
-
-    document.body.classList.add(`page-loaded`);
-    navActiveLinkNode.classList.add(LINK_ONLOAD_CLASSNAME);
-
-    let onActiveLinkAnimationEnd = function () {
-      navActiveLinkNode.classList.remove(LINK_ONLOAD_CLASSNAME);
-      navActiveLinkNode.removeEventListener(`animationend`, onActiveLinkAnimationEnd);
+    const ONLOAD_CLASSNAMES = {
+      linkActive: `onload-animation-link-active`,
+      introMsg: `onload-intro-message`
     };
 
-    navActiveLinkNode.addEventListener(`animationend`, onActiveLinkAnimationEnd);
+    const navActiveLinkNode = document.querySelector(`.page-header__menu .active`);
+    const introMsgNode = document.querySelector(`.intro__message`);
+
+    document.body.classList.add(`page-loaded`);
+    navActiveLinkNode.classList.add(ONLOAD_CLASSNAMES.linkActive);
+
+    navActiveLinkNode.addEventListener(`animationend`, function () {
+      navActiveLinkNode.classList.remove(ONLOAD_CLASSNAMES.linkActive);
+    }, {once: true});
+
+    if (!location.hash || location.hash === `#top`) {
+      introMsgNode.classList.add(ONLOAD_CLASSNAMES.introMsg);
+
+      introMsgNode.addEventListener(`animationend`, function () {
+        introMsgNode.classList.remove(ONLOAD_CLASSNAMES.introMsg);
+      }, {once: true});
+    }
   };
 
   window.addEventListener(`load`, onPageLoad);

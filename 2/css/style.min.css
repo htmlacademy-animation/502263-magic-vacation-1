@@ -1573,7 +1573,12 @@ img {
   max-width: 50%;
   text-transform: uppercase;
   font-size: 2.4rem;
-  line-height: 1.27; }
+  line-height: 1.27;
+  animation-name: fadeInBTT;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.35s;
+  animation-fill-mode: forwards; }
   @media (min-width: 2000px) {
     .intro__message {
       width: 509px;
@@ -1629,12 +1634,8 @@ img {
       margin: 0 0 0 -5px;
       font-size: 48px; } }
 
-.page-loaded .intro__message {
-  animation-name: fadeInBTT;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 1.75s;
-  animation-fill-mode: forwards; }
+.onload-intro-message {
+  animation-delay: 1.75s; }
 
 .page-header {
   position: fixed;
@@ -3206,7 +3207,9 @@ img {
     transform: translate(-50%, -50%);
     display: block;
     width: 2.3rem;
-    height: 2.2rem; }
+    height: 2.2rem;
+    opacity: 0;
+    transition: opacity 0.35s ease-out 1s; }
   .social-block--active .social-block__toggler {
     color: #a67ee5; }
   .social-block__toggler:focus {
@@ -3350,6 +3353,9 @@ body .social-block--active .social-block__toggler::before {
       .social-block__link--vk svg {
         width: 10px;
         height: 10px; } }
+
+.page-loaded .social-block__toggler svg {
+  opacity: 1; }
 
 .page-loaded .social-block__toggler::before {
   transform: translate3d(-50%, -50%, 0) scale(1); }
