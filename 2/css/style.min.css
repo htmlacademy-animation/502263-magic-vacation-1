@@ -956,6 +956,25 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden; }
 
+.ready .ready__anim-logo {
+  opacity: 1;
+  transform: translate3d(0, 0, 0); }
+
+.ready .ready__anim-header {
+  opacity: 1; }
+
+.ready .ready__anim-footer {
+  transform: translate3d(0, 0, 0); }
+
+.ready .ready__anim-link-active::after {
+  animation-name: link-underline-in;
+  animation-duration: 1.05s;
+  animation-timing-function: ease;
+  animation-delay: 0.5s; }
+
+.ready .ready__anim-intro-msg {
+  animation-delay: 1.75s; }
+
 .animation-screen {
   position: fixed;
   display: flex;
@@ -1634,9 +1653,6 @@ img {
       margin: 0 0 0 -5px;
       font-size: 48px; } }
 
-.onload-intro-message {
-  animation-delay: 1.75s; }
-
 .page-header {
   position: fixed;
   top: 0;
@@ -1911,19 +1927,6 @@ img {
     .page-header__social {
       margin-left: 0;
       width: 100%; } }
-
-.page-loaded .page-header__logo {
-  opacity: 1;
-  transform: translate3d(0, 0, 0); }
-
-.page-loaded .page-header__menu {
-  opacity: 1; }
-
-.onload-animation-link-active::after {
-  animation-name: link-underline-in;
-  animation-duration: 1.05s;
-  animation-timing-function: ease;
-  animation-delay: 0.5s; }
 
 .prizes {
   flex-grow: 1;
@@ -2901,9 +2904,6 @@ img {
 .screen--rules {
   background-color: #5f458c; }
 
-.page-loaded .screen__footer {
-  transform: translate3d(0, 0, 0); }
-
 .slider {
   position: relative;
   flex-grow: 1;
@@ -3354,10 +3354,10 @@ body .social-block--active .social-block__toggler::before {
         width: 10px;
         height: 10px; } }
 
-.page-loaded .social-block__toggler svg {
+.ready .social-block__toggler svg {
   opacity: 1; }
 
-.page-loaded .social-block__toggler::before {
+.ready .social-block__toggler::before {
   transform: translate3d(-50%, -50%, 0) scale(1); }
 
 
