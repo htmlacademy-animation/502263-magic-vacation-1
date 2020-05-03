@@ -356,9 +356,3 @@
 .screen--rules {
   background-color: $c-dark;
 }
-
-.page-loaded {
-  & .screen__footer {
-    transform: translate3d(0, 0, 0);
-  }
-}

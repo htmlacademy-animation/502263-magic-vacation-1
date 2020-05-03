@@ -339,21 +339,3 @@
     width: 100%;
   }
 }
-
-.page-loaded {
-  & .page-header__logo {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  & .page-header__menu {
-    opacity: 1;
-  }
-}
-
-.onload-animation-link-active::after {
-  animation-name: link-underline-in;
-  animation-duration: $transition-duration-default * 3;
-  animation-timing-function: ease;
-  animation-delay: 0.5s;
-}
