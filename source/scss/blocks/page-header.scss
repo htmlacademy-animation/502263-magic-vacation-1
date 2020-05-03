@@ -35,6 +35,11 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transition:
+    opacity 0.35s cubic-bezier(0, 0, 0, 0.9) 0.25s,
+    transform 0.35s cubic-bezier(0, 0, 0, 0.9) 0.25s;
+  transform: translate3d(-10%, 0, 0);
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -178,6 +183,8 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  transition: opacity 1s cubic-bezier(0, 0, 0, 0.9) 0.55s;
+  opacity: 0;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -253,9 +260,6 @@
       height: 2px;
       background-color: $c-light;
       left: 0;
-      animation-name: link-underline-in;
-      animation-duration: $transition-duration-default * 3;
-      animation-timing-function: ease;
       transition:
         background-color $transition-duration-default linear,
         opacity $transition-duration-default linear,
@@ -282,6 +286,7 @@
     &.active {
       &::after {
         opacity: 1;
+        transform: scale(1);
       }
     }
 
