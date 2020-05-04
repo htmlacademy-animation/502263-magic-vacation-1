@@ -52,7 +52,8 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-    transition: transform $transition-duration-default ease-out;
+    transform: translate3d(-50%, -50%, 0) scale(0);
+    transition: transform $transition-duration-default*2 cubic-bezier(0, 0, 0, 1.5) 1s;
   }
 
   svg {
@@ -60,15 +61,12 @@
     display: block;
     width: 2.3rem;
     height: 2.2rem;
+    opacity: 0;
+    transition: opacity $transition-duration-default ease-out 1s;
   }
 
-  &:hover,
   .social-block--active & {
     color: $c-purple;
-
-    &::before {
-      transform: translate(-50%, -50%) scale(1.125);
-    }
   }
 
   &:focus {
@@ -94,6 +92,19 @@
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
+    }
+  }
+}
+
+body {
+  & .social-block--active {
+    & .social-block__toggler {
+
+      // Специфичность необходима для переопределения класса от .loaded
+      &::before {
+        transform: translate3d(-50%, -50%, 0) scale(1.125);
+        transition-delay: 0s;
+      }
     }
   }
 }
@@ -258,6 +269,18 @@
         width: 10px;
         height: 10px;
       }
+    }
+  }
+}
+
+.ready {
+  & .social-block__toggler {
+    & svg {
+      opacity: 1;
+    }
+
+    &::before {
+      transform: translate3d(-50%, -50%, 0) scale(1);
     }
   }
 }

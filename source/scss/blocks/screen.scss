@@ -46,6 +46,8 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  transform: translate3d(0, 100%, 0);
+  transition: transform $transition-duration-default cubic-bezier(0, 0, 0, 0.9);
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;

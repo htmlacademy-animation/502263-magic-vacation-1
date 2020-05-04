@@ -1,0 +1,25 @@
+.ready {
+  & &__anim-logo {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  & &__anim-header {
+    opacity: 1;
+  }
+
+  & &__anim-footer {
+    transform: translate3d(0, 0, 0);
+  }
+
+  & &__anim-link-active::after {
+    animation-name: link-underline-in;
+    animation-duration: $transition-duration-default * 3;
+    animation-timing-function: ease;
+    animation-delay: 0.5s;
+  }
+
+  & &__anim-intro-msg {
+    animation-delay: $transition-duration-default * 5;
+  }
+}
