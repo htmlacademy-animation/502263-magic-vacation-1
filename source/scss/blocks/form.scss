@@ -39,7 +39,7 @@
   font: inherit;
   font-size: 2.4rem;
   line-height: 1.2;
-  color: $c-dark;
+  color: var(--c-main);
   border: 0;
   border-radius: 3rem;
   outline: none;
@@ -49,7 +49,7 @@
   animation-timing-function: ease-out;
 
   &:focus {
-    border: 1px solid $c-purple;
+    border: 1px solid var(--c-secondary);
   }
 
   @media (min-width: $stop-scaling) {

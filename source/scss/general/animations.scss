@@ -30,7 +30,7 @@
   }
 }
 
-@keyframes fadeInBTT {
+@keyframes fade-in-btt {
   from {
     opacity: 0;
     transform: translate3d(0, 30%, 0);
@@ -42,7 +42,7 @@
   }
 }
 
-@keyframes fadeInRTL {
+@keyframes fade-in-rtl {
   from {
     opacity: 0;
     transform: translate3d(10%, 0, 0);
@@ -51,5 +51,27 @@
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-out-scale-down {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes show-curtain {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
   }
 }

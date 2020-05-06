@@ -16,6 +16,7 @@
       font-size: 2vw;
     }
   }
+  --main-bg-color: red;
 }
 
 html {
@@ -38,8 +39,8 @@ body {
   font-size: 1.8rem;
   line-height: 1.1;
   font-weight: 600;
-  color: $c-light;
-  background-color: $c-dark;
+  color: var(--c-light);
+  background-color: var(--c-main);
   overflow: hidden;
 
   -webkit-font-smoothing: antialiased;
