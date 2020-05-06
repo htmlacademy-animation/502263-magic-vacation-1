@@ -56,7 +56,7 @@
 
 .result__title {
   margin: 0 auto 2rem;
-  color: $c-light;
+  color: var(--c-light);
 
   @media (min-width: $stop-scaling) {
     margin: 0 auto 20px;
@@ -114,7 +114,7 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
-  color: $c-light;
+  color: var(--c-light);
 
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;
@@ -146,7 +146,7 @@
     margin-left: 1.5rem;
     width: 4rem;
     height: 4rem;
-    color: $c-dark;
+    color: var(--c-main);
 
     @media (min-width: $stop-scaling) {
       margin-left: 15px;
@@ -159,8 +159,8 @@
       content: "";
       width: 100%;
       height: 100%;
-      background-color: $c-light;
-      border: 2px solid $c-light;
+      background-color: var(--c-light);
+      border: 2px solid var(--c-light);
       border-radius: 50%;
       z-index: -1;
     }
@@ -190,21 +190,21 @@
     outline: none;
 
     span::before {
-      border-color: $c-purple;
+      border-color: var(--c-secondary);
     }
   }
 
   &:active,
   &:active:focus {
     span {
-      color: $c-light;
+      color: var(--c-light);
     }
 
     span::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: var(--c-secondary);
+      border-color: var(--c-secondary);
     }
   }
 }

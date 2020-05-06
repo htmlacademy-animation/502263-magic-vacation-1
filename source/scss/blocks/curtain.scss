@@ -3,7 +3,7 @@
   height: 100vh;
   position: absolute;
   bottom: 0;
-  background-color: $c-dark;
+  background-color: var(--c-main);
   transition: transform $transition-duration-default*1.5 ease-out;
   transform: scaleY(0);
   transform-origin: bottom;

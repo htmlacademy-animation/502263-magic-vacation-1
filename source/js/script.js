@@ -1,4 +1,5 @@
 // modules
+import pageColorsToggle from './modules/page-colors-toggle.js';
 import loader from './modules/loader.js';
 import curtain from './modules/curtain.js';
 import mobileHeight from './modules/mobile-height-adjust.js';
@@ -14,6 +15,7 @@ import FullPageScroll from './modules/full-page-scroll';
 // init modules
 loader();
 curtain();
+pageColorsToggle();
 mobileHeight();
 slider();
 menu();
