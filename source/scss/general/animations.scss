@@ -66,12 +66,37 @@
   }
 }
 
-@keyframes show-curtain {
+@keyframes scale-y-up {
   from {
     transform: scaleY(0);
   }
 
   to {
     transform: scaleY(1);
+  }
+}
+
+@keyframes appear-scale-up {
+  0% {
+    color: transparent;
+    transform: scale(0);
+  }
+
+  30% {
+    color: transparent;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

@@ -4,7 +4,7 @@ const COLOR_PROPS = {
   darkBlue: `#4073ee`,
 };
 
-let resetCssProps = function (subset = ``) {
+let resetCssProps = function (subset) {
   let mainColor = ``;
   let secondaryColor = ``;
 
