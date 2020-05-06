@@ -251,6 +251,7 @@
     transition: color $transition-duration-default linear;
     padding: 0 0.5em 0.5em;
     overflow: hidden;
+    contain: paint;
 
     &::after {
       content: "";

@@ -34,6 +34,7 @@
   color: var(--c-main);
   border-radius: 50%;
   transition: color $transition-duration-default ease-out;
+  contain: layout;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;

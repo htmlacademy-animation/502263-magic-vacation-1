@@ -10,7 +10,7 @@
   z-index: 1;
 
   &--active {
-    animation-name: show-curtain;
+    animation-name: scale-y-up;
     animation-fill-mode: forwards;
     animation-duration: $transition-duration-default;
     animation-timing-function: linear;
