@@ -1,0 +1,19 @@
+.curtain {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--c-main);
+  transition: transform $transition-duration-default*1.5 ease-out;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  z-index: 1;
+
+  &--active {
+    animation-name: show-curtain;
+    animation-fill-mode: forwards;
+    animation-duration: $transition-duration-default;
+    animation-timing-function: linear;
+    animation-delay: 0.2s;
+  }
+}
