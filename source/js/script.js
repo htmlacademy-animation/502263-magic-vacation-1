@@ -1,5 +1,6 @@
 // modules
 import loader from './modules/loader.js';
+import curtain from './modules/curtain.js';
 import mobileHeight from './modules/mobile-height-adjust.js';
 import slider from './modules/slider.js';
 import menu from './modules/menu.js';
@@ -12,6 +13,7 @@ import FullPageScroll from './modules/full-page-scroll';
 
 // init modules
 loader();
+curtain();
 mobileHeight();
 slider();
 menu();

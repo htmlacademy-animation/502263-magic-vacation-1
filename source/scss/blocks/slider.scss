@@ -13,7 +13,7 @@
   .swiper-slide-next {
     & .slider__item-text {
       opacity: 0;
-      animation-name: fadeInRTL;
+      animation-name: fade-in-rtl;
       animation-duration: 0.5s;
       animation-timing-function: ease-out;
       animation-delay: $transition-duration-default * 2;
@@ -33,6 +33,12 @@
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(var(--vh, 1vh) * 100);
     }
+  }
+
+  &--animation-hide {
+    animation-name: fade-out-scale-down;
+    animation-duration: $transition-duration-default*2;
+    animation-timing-function: ease-in;
   }
 }
 
