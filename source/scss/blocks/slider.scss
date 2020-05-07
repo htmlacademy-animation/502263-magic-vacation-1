@@ -3,43 +3,13 @@
   flex-grow: 1;
   width: 100%;
 
-  .swiper-slide {
-    & .slider__item-text {
-      opacity: 0;
-    }
-  }
-
-  .swiper-slide-active,
-  .swiper-slide-next {
-    & .slider__item-text {
-      opacity: 0;
-      animation-name: fade-in-rtl;
-      animation-duration: 0.5s;
-      animation-timing-function: ease-out;
-      animation-delay: $transition-duration-default * 2;
-      animation-fill-mode: forwards;
-    }
-  }
-  
-  .swiper-slide-active {
-    & .slider__item-text {
-      animation-duration: 0.5s;
-      animation-delay: $transition-duration-default;
-    }
-  }
-
   .swiper-wrapper {
     min-height: 100vh;
+    box-sizing: border-box;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(var(--vh, 1vh) * 100);
     }
-  }
-
-  &--animation-hide {
-    animation-name: fade-out-scale-down;
-    animation-duration: $transition-duration-default*2;
-    animation-timing-function: ease-in;
   }
 }
 
@@ -184,8 +154,7 @@
   position: relative;
   width: 4rem;
   height: 4rem;
-  transition: color $transition-duration-default ease-out;
-  color: var(--c-main);
+  color: $c-dark;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -197,8 +166,8 @@
     content: "";
     width: 100%;
     height: 100%;
-    background-color: var(--c-light);
-    border: 2px solid var(--c-light);
+    background-color: $c-light;
+    border: 2px solid $c-light;
     border-radius: 50%;
     z-index: -1;
   }
@@ -217,7 +186,7 @@
   }
 
   &:hover {
-    color: var(--c-secondary);
+    color: $c-purple;
 
     &::before {
       width: 112.5%;
@@ -226,25 +195,23 @@
   }
 
   &:focus {
-    transition: color $transition-duration-default ease-out;
-    color: var(--c-secondary);
+    color: $c-purple;
     outline: none;
 
     &::before {
-      border-color: var(--c-secondary);
+      border-color: $c-purple;
     }
   }
 
   &:active,
   &:active:focus {
-    transition: color $transition-duration-default ease-out;
-    color: var(--c-light);
+    color: $c-light;
 
     &::before {
       width: 100%;
       height: 100%;
-      background-color: var(--c-secondary);
-      border-color: var(--c-secondary);
+      background-color: $c-purple;
+      border-color: $c-purple;
     }
   }
 
@@ -266,7 +233,6 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
-  transition: background-color $transition-duration-default ease-out;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -289,7 +255,7 @@
       margin: 0 0.6rem;
       width: 0.4rem;
       height: 0.4rem;
-      background-color: var(--c-light);
+      background-color: $c-light;
     }
   }
 
@@ -306,7 +272,7 @@
       margin: 0 0.6rem;
       width: 0.4rem;
       height: 0.4rem;
-      background-color: var(--c-light);
+      background-color: $c-light;
     }
   }
 }
